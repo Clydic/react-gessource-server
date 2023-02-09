@@ -1,0 +1,62 @@
+{
+    "games": [
+        {
+            "name": "test",
+            "values": {
+                "Pv": {
+                    "vmin": -10,
+                    "vmax": 107,
+                    "vdefaut": 107,
+                    "vact": 100
+                },
+                "PO": {
+                    "vmin": 0,
+                    "vmax": 10000000,
+                    "vdefaut": 4300,
+                    "vact": 4300
+                },
+                "PA": {
+                    "vmin": 0,
+                    "vmax": 100000,
+                    "vdefaut": 1626,
+                    "vact": 1626
+                },
+                "PC": {
+                    "vmin": 0,
+                    "vmax": 100000,
+                    "vdefaut": 1752,
+                    "vact": 1752
+                }
+            }
+        },
+        {
+            "name": "test2",
+            "values": {
+                "Pv": {
+                    "vmin": -10,
+                    "vmax": 107,
+                    "vdefaut": 107,
+                    "vact": 100
+                },
+                "PO": {
+                    "vmin": 0,
+                    "vmax": 10000000,
+                    "vdefaut": 4300,
+                    "vact": 4300
+                },
+                "PA": {
+                    "vmin": 0,
+                    "vmax": 100000,
+                    "vdefaut": 1626,
+                    "vact": 1626
+                },
+                "PC": {
+                    "vmin": 0,
+                    "vmax": 100000,
+                    "vdefaut": 1752,
+                    "vact": 1752
+                }
+            }
+        }
+    ]
+}
