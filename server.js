@@ -9,6 +9,9 @@ const JSON_FILE = process.env.JSON_FILE;
 
 
 app.use(cors());
+const bodyParser = require("body-parser");
+const jsonParser = bodyParser.json();
+app.use(jsonParser);
 require("./game.routes")(app);
 app.listen(PORT, () => {
 	console.log('Server is running on port ' + PORT
