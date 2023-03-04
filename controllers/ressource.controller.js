@@ -42,7 +42,7 @@ exports.update = (req, res) => {
         games[index].values[ressource] = req.body;
         list_objec.games = games;
         fs.writeFileSync(JSON_FILE, JSON.stringify(list_objec));
-        res.send(list_objec);
+        res.send(games[index].values[ressource]);
 
 
     }
@@ -79,6 +79,6 @@ exports.create = (req, res) => {
     list_games[index].values[newItem.ressource] = newItem.values;
     console.log(list_games);
     items.games = list_games;
-    // fs.writeFileSync(JSON_FILE, JSON.stringify(items));
+    fs.writeFileSync(JSON_FILE, JSON.stringify(items));
     res.json(list_games[index]);
 }
