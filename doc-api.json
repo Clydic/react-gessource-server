@@ -1,0 +1,47 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Api Gessource",
+        "description": "Api wich store data of application Gessource",
+        "version": "0.0.1"
+    },
+    "paths": {
+        "/games": {
+            "get": {
+                "description": "Get all games registered",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "description": "Create a new game",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/games/{name}": {
+            "get": {
+                "description": "Get a game with its name",
+                "parameters": [
+                    "name"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "The game does not exist"
+                    }
+                }
+            }
+        }
+    },
+    "apis": [
+        "./routes/*.routes.js"
+    ]
+}

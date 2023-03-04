@@ -16,3 +16,5 @@
 .env.test.local
 .env.production.local
 
+# Build docker
+run.sh
