@@ -69,12 +69,12 @@ exports.delete = (req, res) => {
 }
 
 exports.create = (req, res) => {
-    const items = JSON.parse(fs.readFileSync(JSON_FILE));
-    const list_games = items.games
-    const game = req.params.game;
+    let items = JSON.parse(fs.readFileSync(JSON_FILE));
+    let list_games = items.games
+    let game = req.params.game;
     const index = list_games.findIndex(i => i.game == game);
     console.log(items);
-    const newItem = req.body;
+    let newItem = req.body;
     console.log(newItem);
     list_games[index].values[newItem.ressource] = newItem.values;
     console.log(list_games);
