@@ -14,6 +14,7 @@ ENV HOSTNAME=localhost
 ENV JSON_FILE = data/data.json
 ENV NODE_ENV = developpement
 
+
 EXPOSE 4000
 
 CMD ["node", "server.js"]
