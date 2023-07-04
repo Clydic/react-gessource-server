@@ -5,6 +5,7 @@ const cors = require('cors');
 const { config } = require('dotenv');
 config();
 const PORT = process.env.PORT || 3000;
+const HOSTNAME = process.env.HOSTNAME || 'localhost';
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./doc-api.json");
 app.use(cors());
@@ -15,8 +16,8 @@ app.use(jsonParser);
 require("./routes/game.routes")(app);
 require("./routes/ressource.routes")(app);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.listen(PORT, () => {
-	console.log('Server is running on port ' + PORT
+app.listen(PORT, HOSTNAME, () => {
+	console.log(`Server is running on address http://${HOSTNAME}:${PORT}`
 	)
 });
 
