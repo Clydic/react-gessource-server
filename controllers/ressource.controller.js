@@ -23,7 +23,7 @@ exports.findOne = (req, res) => {
     let ressource = (req.params.ressource);
     let json_content = fs.readFileSync(JSON_FILE);
     let json = JSON.parse(json_content);
-    let game_value = json.games.filter((e) => e.game == game)
+    let game_value = json.games.filter((e) => e.name == game)
     res.send(game_value[0].values[ressource]);
 }
 
@@ -32,7 +32,7 @@ exports.update = (req, res) => {
         const list_objec = JSON.parse(fs.readFileSync(JSON_FILE));
         const games = list_objec.games;
         console.log(list_objec);
-        const index = games.findIndex(i => i.game == req.params.game);
+        const index = games.findIndex(i => i.name == req.params.game);
         const ressource = req.params.ressource;
         console.log('req.params : ' + req.params.ressource);
         console.log(index);
@@ -71,13 +71,16 @@ exports.delete = (req, res) => {
 exports.create = (req, res) => {
     let items = JSON.parse(fs.readFileSync(JSON_FILE));
     let list_games = items.games
-    let game = req.params.game;
-    const index = list_games.findIndex(i => i.game == game);
-    console.log(items);
+    let params_game = req.params.game;
+    console.log("list_games : " + list_games[1]);
+    const index = list_games.findIndex(i => i.name == params_game);
+    // console.log("items : " + items);
+    console.log(`game : ${params_game}`);
     let newItem = req.body;
     console.log(newItem);
+    console.log(index);
     list_games[index].values[newItem.ressource] = newItem.values;
-    console.log(list_games);
+    // console.log(list_games);
     items.games = list_games;
     fs.writeFileSync(JSON_FILE, JSON.stringify(items));
     res.json(list_games[index]);
