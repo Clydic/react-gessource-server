@@ -4,8 +4,9 @@ const app = express();
 const cors = require('cors');
 const { config } = require('dotenv');
 const fs = require('fs');
-const JSON_FILE = process.env.JSON_FILE;
 config();
+const JSON_FILE = process.env.JSON_FILE || "../data/data.json";
+
 // Find All games
 exports.findAll = (req, res) => {
 	let json_content = fs.readFileSync(JSON_FILE);
