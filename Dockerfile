@@ -16,6 +16,7 @@ ENV NODE_ENV=developpement
 
 EXPOSE 3000
 
+
 CMD ["node", "server.js"]
 
 
