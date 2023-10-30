@@ -5,14 +5,14 @@ const cors = require('cors');
 const { config } = require('dotenv');
 const fs = require('fs');
 config();
-const JSON_FILE = process.env.JSON_FILE;
+const JSON_FILE = process.env.JSON_FILE || "data/data.json";
 
 
 exports.findAll = (req, res) => {
     let game = (req.params.game);
     let json_content = fs.readFileSync(JSON_FILE);
     let json = JSON.parse(json_content);
-    let game_value = json.games.filter((e) => e.game == game)
+    let game_value = json.games.filter((e) => e.name == game)
     res.send(game_value[0].values);
 
 
